@@ -1,0 +1,57 @@
+package graphs;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+/*
+ * AdjecencyList and AdjecencyMatrix are the main ways by which we implement graphs.
+ * AdjecencyList better space complexity than AdjecencyMatrix as for AdjecencyMatrix we use n*n matrix
+ * 
+*/
+
+public class Graph {
+	HashMap<String, ArrayList<String>> adjList = new HashMap<String, ArrayList<String>>();
+	
+	public boolean addVertex(String vertex) {
+		if (adjList.get(vertex) == null) {
+			adjList.put(vertex, new ArrayList<String>());
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean addEdge(String vertex1, String vertex2) {
+		if (adjList.get(vertex1) == null || adjList.get(vertex2) == null) { 
+			return false;
+		}
+		
+		adjList.get(vertex1).add(vertex2);
+		adjList.get(vertex2).add(vertex1);
+		return true;
+	}
+
+	public boolean removeEdge(String vertex1, String vertex2) {
+		if (adjList.get(vertex1) == null || adjList.get(vertex2) == null) { 
+			return false;
+		}
+		
+		adjList.get(vertex1).remove(vertex2);
+		adjList.get(vertex2).remove(vertex1);
+		return true;
+	}
+
+	public boolean removeVertex(String vertex) {
+		if (adjList.get(vertex) == null) return false;
+		
+		for (String otherVertex : adjList.get(vertex)) {
+			adjList.get(otherVertex).remove(vertex);
+		}
+		
+		adjList.remove(vertex);
+		return true;
+	}
+	
+	public void printGraph() {
+		System.out.println(adjList);
+	}
+}
