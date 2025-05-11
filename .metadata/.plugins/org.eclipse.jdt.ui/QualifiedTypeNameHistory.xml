@@ -26,4 +26,12 @@
     <fullyQualifiedTypeName name="com.sachin.learn_spring.b.lazy_initialization.ClassA"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Lazy"/>
     <fullyQualifiedTypeName name="com.sachin.learn_spring.b.lazy_initialization.ClassB"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Scope"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.config.ConfigurableBeanFactory"/>
+    <fullyQualifiedTypeName name="java.lang.Class"/>
+    <fullyQualifiedTypeName name="com.sachin.learn_spring.c.bean_scope.ClassA"/>
+    <fullyQualifiedTypeName name="com.sachin.learn_spring.d.postcontruct_predestroy.SomeDepedency"/>
+    <fullyQualifiedTypeName name="jakarta.annotation.PostConstruct"/>
+    <fullyQualifiedTypeName name="com.sachin.learn_spring.d.postcontruct_predestroy.SomeClass"/>
+    <fullyQualifiedTypeName name="jakarta.annotation.PreDestroy"/>
 </qualifiedTypeNameHistroy>
