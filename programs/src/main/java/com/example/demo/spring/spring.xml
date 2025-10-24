@@ -1,0 +1,37 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="e" class="Spring.Engine">
+		<property name="model" value="2016" />
+	</bean>
+	
+	<bean id="t" class="Spring.Test">
+		<property name="sachin">
+			<set>
+				<value>sachin</value>
+				<value>atul</value>
+				<value>vinay</value>
+			</set>
+		</property>
+	</bean>
+	
+
+	<bean id="c" class="Spring.Car">
+		<property name="carName" value="CIAZ" />
+		<property name="engine" ref="e" />
+	</bean>
+
+	<bean id="b" class="Spring.Car">
+		<property name="carName" value="AUDI" />
+		<property name="engine">
+			<bean id="f" class="Spring.Engine">
+				<property name="model" value="2017" />
+			</bean>
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layouts :: header"></head>
+
+<body>
+
+<nav th:replace="layouts :: navbar"></nav>
+	<div class="container">
+		<h3>Add New Employee</h3>
+		<hr>
+		
+		<div th:if="${redirect}">
+   			<div>Employee added successfully</div>
+		</div>
+		
+		<form action="/employees/save" th:object="${employee}" method="POST" >
+				
+		<div class="input-group mb-3">
+  			<div class="input-group-prepend">
+    			<span class="input-group-text" id="inputGroup-sizing-default">First Name</span>
+  			</div>
+ 			<input type="text" class="form-control" th:field="${employee.firstName}" aria-label="First Name" aria-describedby="inputGroup-sizing-default">
+		</div>
+		
+		<div class="input-group mb-3">
+  			<div class="input-group-prepend">
+    			<span class="input-group-text" id="inputGroup-sizing-default">Last Name</span>
+  			</div>
+ 			<input type="text" class="form-control" th:field="${employee.lastName}" aria-label="Last Name" aria-describedby="inputGroup-sizing-default">
+		</div>
+		
+		<div class="input-group mb-3">
+  			<div class="input-group-prepend">
+    			<span class="input-group-text" id="inputGroup-sizing-default">Email Address</span>
+  			</div>
+ 			<input type="text" class="form-control" th:field="${employee.email}" aria-label="Email Address" aria-describedby="inputGroup-sizing-default">
+		</div>
+		
+		<button class="btn btn-primary" type="submit">Create Employee</button>
+		
+		</form>
+	</div>
+</body>
+
+</html>
